@@ -1,0 +1,20 @@
+name: Deploy
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        run: |
+          apt install -y sshpass
+      - name: Deploy
+        run: |
+          sshpass -p $SSHPASSWORD ssh -o StrictHostKeyChecking=no $SSHUSER@$SSHHOST 'mkdir site'
+          sshpass -p $SSHPASSWORD scp -o StrictHostKeyChecking=no -r ./* $SSHUSER@$SSHHOST:~/site/
+          sshpass -p $SSHPASSWORD ssh -o StrictHostKeyChecking=no $SSHUSER@$SSHHOST 'cd site; docker-compose down; docker-compose up -d'
