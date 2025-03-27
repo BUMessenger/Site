@@ -15,6 +15,8 @@ jobs:
           sudo apt install -y sshpass
       - name: Deploy
         run: |
+          pwd;
+          ls;
           sshpass -p ${{ secrets.SSHPASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSHUSER }}@${{ secrets.SSHHOST }} 'mkdir site || :'
           sshpass -p ${{ secrets.SSHPASSWORD }} scp -o StrictHostKeyChecking=no -r http docker-compose.yml ${{ secrets.SSHUSER }}@${{ secrets.SSHHOST }}:~/site/
           sshpass -p ${{ secrets.SSHPASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSHUSER }}@${{ secrets.SSHHOST }} 'cd site; docker-compose down; docker-compose up -d'
