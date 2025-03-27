@@ -103,6 +103,11 @@ body {
     width: 300px;
     border-left: 4px solid var(--accent-red);
 }
+
+.feature-card:hover {
+    background-color: var(--bg-dark);
+    transform: translate(0px, -10px);
+}
 .feature-card h3 {
     color: var(--accent-red);
     margin-top: 0;
