@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Setup
         run: |
-          apt install -y sshpass
+          sudo apt install -y sshpass
       - name: Deploy
         run: |
           sshpass -p $SSHPASSWORD ssh -o StrictHostKeyChecking=no $SSHUSER@$SSHHOST 'mkdir site'
