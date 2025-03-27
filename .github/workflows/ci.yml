@@ -10,11 +10,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Setup
         run: |
-          apt install -y sshpass
+          sudo apt install -y sshpass
       - name: Deploy
         run: |
-          sshpass -p $SSHPASSWORD ssh -o StrictHostKeyChecking=no $SSHUSER@$SSHHOST 'mkdir site'
-          sshpass -p $SSHPASSWORD scp -o StrictHostKeyChecking=no -r ./* $SSHUSER@$SSHHOST:~/site/
-          sshpass -p $SSHPASSWORD ssh -o StrictHostKeyChecking=no $SSHUSER@$SSHHOST 'cd site; docker-compose down; docker-compose up -d'
+          pwd;
+          ls;
+          sshpass -p ${{ secrets.SSHPASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSHUSER }}@${{ secrets.SSHHOST }} 'mkdir site || :'
+          sshpass -p ${{ secrets.SSHPASSWORD }} scp -o StrictHostKeyChecking=no -r http docker-compose.yml ${{ secrets.SSHUSER }}@${{ secrets.SSHHOST }}:~/site/
+          sshpass -p ${{ secrets.SSHPASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSHUSER }}@${{ secrets.SSHHOST }} 'cd site; docker-compose down; docker-compose up -d'
