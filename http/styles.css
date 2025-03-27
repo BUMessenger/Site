@@ -1,0 +1,207 @@
+:root {
+    --bg-dark: #121212;
+    --bg-light: #1E1E1E;
+    --accent-red: #E53935;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+}
+
+@font-face {
+	font-family: 'Storopia';
+	src: url(resources/Storopia.ttf);
+}
+
+body {
+    font-family: 'Storopia', monospace, sans-serif;
+    background-color: var(--bg-dark);
+    background-image: url('resources/sea.png');
+    backdrop-filter: blur(10px);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-red);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.logo img {
+    height: 2.5rem;
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.nav-links a:hover {
+    color: var(--accent-red);
+}
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+.cta-button {
+    background-color: var(--accent-red);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.cta-button:hover {
+    background-color: #C62828;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.feature-card {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    border-left: 4px solid var(--accent-red);
+}
+.feature-card h3 {
+    color: var(--accent-red);
+    margin-top: 0;
+}
+.screenshots {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: var(--bg-light);
+    border-radius: 100px;
+}
+.screenshots h2 {
+    margin-bottom: 2rem;
+    border-radius: 100px;
+}
+.screenshot-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.screenshot {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    height: auto;
+}
+.github-links {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.github-links h2 {
+    margin-bottom: 2rem;
+}
+.repo-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.repo-card {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 250px;
+    transition: transform 0.2s;
+    line-height: 10pt;
+}
+/*
+.repo-card:hover {
+    transform: translateY(-5px);
+}
+*/
+.repo-card h3 {
+    margin-top: 0;
+    color: var(--accent-red);
+}
+.repo-card a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.repo-card a:hover {
+    color: var(--accent-red);
+    font-size: 1.1rem;
+}
+
+.contacts {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contacts-block {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    line-height: 10pt;
+}
+
+.contact h3 {
+    margin-top: 0;
+    color: var(--accent-red);
+}
+
+.contact a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact a:hover {
+    color: var(--accent-red);
+    font-size: 1.1rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    color: var(--text-secondary);
+    border-top: 1px solid #333;
+}
