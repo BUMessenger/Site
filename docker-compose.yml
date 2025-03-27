@@ -1,0 +1,7 @@
+services:
+  nginx:
+    image: nginx:1.17.2
+    volumes:
+      - ./http:/usr/share/nginx/html
+    ports:
+      - 3421:80
