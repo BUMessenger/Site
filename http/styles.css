@@ -149,12 +149,14 @@ body {
 .github-links h2 {
     margin-bottom: 2rem;
 }
-.github-links p {
+
+.github-links .desc {
     font-size: 1.2rem;
     color: var(--text-secondary);
     max-width: 800px;
     margin: 0 auto 2rem;
 }
+
 .repo-cards {
     display: flex;
     justify-content: center;
