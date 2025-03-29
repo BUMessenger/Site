@@ -47,6 +47,10 @@ body {
 .logo img {
     height: 2.5rem;
 }
+.hero .devtext {
+    margin-top: 5px;
+    font-size: 1rem;
+}
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -86,6 +90,10 @@ body {
 }
 .cta-button:hover {
     background-color: #C62828;
+}
+.cta-button:disabled {
+    background-color: #909090;
+    cursor: not-allowed;
 }
 .features {
     display: flex;
